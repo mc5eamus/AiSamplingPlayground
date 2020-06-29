@@ -23,8 +23,7 @@ namespace AiSamplingPlayground
                     services.Configure<TelemetryConfiguration>((config) =>
                     {
                         var builder = config.DefaultTelemetrySink.TelemetryProcessorChainBuilder;
-                        builder.UseAdaptiveSampling(excludedTypes: "Trace", maxTelemetryItemsPerSecond: 5);
-                        //builder.UseSampling(100);
+                        builder.UseSampling(99);
                         builder.Build();
                     });
 
